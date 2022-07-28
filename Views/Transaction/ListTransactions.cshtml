@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Sample_Project.Models.TransactionModel>
+
+@{
+    ViewData["Title"] = "List Transactions";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    This is where the transactions are supposed to live
+</div>
+
+<p>@Html.ActionLink("Create new", "Create")</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransactionAmount)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionAmount)
+            </td>
+
+        </tr>
+    }
+
+</table>
